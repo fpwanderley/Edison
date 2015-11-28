@@ -1,4 +1,4 @@
-import requests
+from requests import *
 
 IP_ADDRESS = 'http://localhost'
 PORT = ':8000'
@@ -18,10 +18,10 @@ class Sender(object):
         payload = {
             'command':message
         }
-        return requests.post(self.command_url, payload)
+        return post(self.command_url, payload)
 
     def send_message(self, message):
         payload = {
             'message':message
         }
-        return requests.post(self.message_url, payload)
+        return post(self.message_url, payload)

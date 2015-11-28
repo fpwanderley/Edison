@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from os.path import join, dirname
 from UseCases import StrongBreakCase
 import time
@@ -141,7 +142,7 @@ log_dicts = execute_each_log(log_paths = log_paths)
 for dict in log_dicts:
 
     # TODO: Criar class para comunicação com o servidor. Nessa linha,
-    # TODO: essa classe é responsável por INICIALIZAR A COMUNICAÇÃO.
+    # TODO: essa classe e responsável por INICIALIZAR A COMUNICAÇÃO.
 
     analysis_lenght = len(dict['RPM'])
     strong_break_case = StrongBreakCase(period = PERIOD)
