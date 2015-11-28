@@ -1,4 +1,7 @@
 from os.path import abspath, join, dirname
+from UseCases import StrongBreakCase
+import time
+from SenderClass import Sender
 
 MAIN_PATH = dirname(__file__)
 LOGS_PATH = join(MAIN_PATH, 'Logs')
@@ -6,9 +9,9 @@ LOGS_PATH = join(MAIN_PATH, 'Logs')
 LOGS = ['Rhudney - 27_10.txt']
 DATA_LABELS = ['RPM', 'SPEED', 'THROTTLE']
 
-PERIOD = 0.300 #miliseconds
+PERIOD = 0.600 #miliseconds
 
-log_paths = []
+START_COMMAND = 'start'
 
 def set_log_full_path(log_paths):
     new_log_paths = []
@@ -54,6 +57,22 @@ def normalize_dict_lists(data_dict):
 
     return data_dict
 
+def post_process_dicts(log_dicts):
+
+    for dict in log_dicts:
+
+        # Normalizing Throttle
+        old_dict = dict.pop('THROTTLE')
+        dict['THROTTLE'] = normalize_throttle(old_dict)
+
+        # Finding Acceleration
+        speed_list = dict['SPEED']
+        dict['ACCELERATION'] = calculate_acceleration(speed_list, period = PERIOD)
+        DATA_LABELS.append('ACCELERATION')
+
+    return log_dicts
+    # Create the list of Acceleration and include it to the dict.
+
 def execute_each_log(log_paths):
     log_dicts = []
     for log_path in log_paths:
@@ -72,16 +91,44 @@ def execute_each_log(log_paths):
         data_dict = normalize_dict_lists(data_dict=data_dict)
         log_dicts.append(data_dict)
 
+    # POST-PROCESS DICTS
+    log_dicts = post_process_dicts(log_dicts = log_dicts)
+
     return log_dicts
 
-def post_process_dicts(log_dicts):
-    return log_dicts
-    # Create the list of Acceleration and include it to the dict.
+def normalize_throttle(throttle_list):
+
+    int_list = [int(x) for x in throttle_list]
+
+    max_int = max(int_list)
+    min_int = min(int_list)
+
+    def normalizer(element):
+        return (element - min_int)*100/(max_int - min_int)
+
+    return [str(normalizer(x)) for x in int_list]
+
+def calculate_acceleration(speed_list, period):
+
+    acceleration_list = []
+    int_speed_list = [int(x) for x in speed_list]
+    last_speed = int_speed_list[0]
+
+    for speed in int_speed_list:
+
+        acceleration = round((speed - last_speed)/period, 2)
+        acceleration_list.append(acceleration)
+        last_speed = speed
+
+    str_acceleration_list = [str(x) for x in acceleration_list]
+    return str_acceleration_list
 
 # According to period and the list_length this function creates a list with:
 # - Same length of list_lenght.
 # - Each of its values is equal to: period*element_index_in_the_list
 def build_x_axis_values(period, list_lenght):
+
+    # x_axis = [str(round(idx*period, 1)) for idx in range(list_lenght)]
     x_axis = [round(idx*period, 1) for idx in range(list_lenght)]
     return x_axis
 
@@ -106,19 +153,63 @@ def plot_graphs(log_dicts, x_axis):
 
     plt.show()
 
+
+
+log_paths = []
+
+# Sets the full path for all Logs.
 log_paths = set_log_full_path(log_paths = LOGS)
-# Dicionario de cada Log de dados.
-# KEYS = ['RPM','THROTTLE','SPEED']
+
+# Returns a list of Dicts. A Dict for each log with the entries:
+# 'RPM', 'SPEED', 'THROTTLE', 'ACCELERATION'
 log_dicts = execute_each_log(log_paths = log_paths)
 
-# POST-PROCESS DICTS
-log_dicts = post_process_dicts(log_dicts = log_dicts)
+# PLOT ALL GRAPHS: Only for analysis.
+# list_length = len(log_dicts[0]['SPEED'])
+# x_axis = build_x_axis_values(PERIOD, list_length)
+# plot_graphs(log_dicts = log_dicts, x_axis = x_axis)
 
-# CREATES THE X_AXIS LIST
-list_length = len(log_dicts[0]['SPEED'])
-x_axis = build_x_axis_values(PERIOD, list_length)
+# For each log_dict there is only one process between Edison and Server.
+for dict in log_dicts:
 
-# PLOT GRAPHS
-plot_graphs(log_dicts = log_dicts, x_axis = x_axis)
+    # TODO: Criar class para comunicação com o servidor. Nessa linha,
+    # TODO: essa classe é responsável por INICIALIZAR A COMUNICAÇÃO.
+
+    analysis_lenght = len(dict['RPM'])
+    strong_break_case = StrongBreakCase(period = PERIOD)
+    sender = Sender()
+    sender.start_process(START_COMMAND)
+
+    for idx in range(analysis_lenght):
+
+        #################################
+        ### Feed the analysis classes ###
+        #################################
+        # StrongBreakCase:
+        current_acceleration = dict['ACCELERATION'][idx]
+        strong_break_case.include_new_entry(new_entry = current_acceleration)
+
+        #########################################
+        ### Get message from analysis classes ###
+        #########################################
+        # StrongBreakCase:
+        strong_break_case_message = strong_break_case.get_current_message(idx = idx)
+
+        #########################################
+        ### Send the message to the server    ###
+        #########################################
+        if strong_break_case_message is not None:
+            sender.send_message(strong_break_case_message)
+
+        ###########################################
+        ### Waits for the period for every loop ###
+        ###########################################
+        # time.sleep(PERIOD)
+
+    #########################################
+    ### It's time to generate the report  ###
+    #########################################
+    strong_break_case_report = strong_break_case.generate_report()
+    print (strong_break_case_report)
 
 
