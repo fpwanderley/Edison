@@ -1,8 +1,3 @@
-
-from FileHandler import FileWriter
-from HistogramGenerator import create_histogram_from_data
-from PieChartGenerator import create_pie_chart_from_data
-
 # Detects and show a report about the case where the driver is pressing the break pedal
 # strongly.
 LIMITS_INTERVALS = [(0.0, -2.5), (-2.5, -5.0), (-5.0, -9.8), (-9.8, -30.0)]
