@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="Messages">
+    </div>
+</body>
+</html>
+<script>
+
+    var REQUEST_PERIOD = 600;
+
+    function getNewMessages(){
+        $.get("get_next_message", function(data){
+            if (data != ""){
+                new_line = "<p>" + data + "</p>"
+                $("#Messages").append(new_line);
+            }
+        });
+    }
+
+    setInterval(getNewMessages, REQUEST_PERIOD);
+
+    $(document).ready(function (){
+      getNewMessages();
+    });
+</script>
