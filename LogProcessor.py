@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from os.path import join, dirname
-from UseCases import StrongBreakCase
+from UseCases import StrongBreakCase, CorrectGearChangingCase
 import time
 from SenderClass import Sender
+from ChartProcessors import build_x_axis_values, plot_graphs
 
 MAIN_PATH = dirname(__file__)
 LOGS_PATH = join(MAIN_PATH, 'Logs')
@@ -13,6 +14,9 @@ DATA_LABELS = ['RPM', 'SPEED', 'THROTTLE']
 PERIOD = 0.600 #miliseconds
 
 START_COMMAND = 'start'
+
+SHOULD_PLOT = False
+SHOULD_SEND = False
 
 def set_log_full_path(log_paths):
     new_log_paths = []
@@ -59,6 +63,15 @@ def normalize_dict_lists(data_dict):
     return data_dict
 
 def post_process_dicts(log_dicts):
+    """ Processa e cria novos dicts.
+
+    1: Cria o dict com os THROTTLES normalizados.
+
+    2: Cria o dict com ACCELERATION baseado em SPEED.
+
+    :param log_dicts: Os dicts existents atualmente
+    :return: Os dicts atuais com os novos.
+    """
 
     for dict in log_dicts:
 
@@ -68,11 +81,15 @@ def post_process_dicts(log_dicts):
 
         # Finding Acceleration
         speed_list = dict['SPEED']
-        dict['ACCELERATION'] = calculate_acceleration(speed_list, period = PERIOD)
+        dict['ACCELERATION'] = create_derivative(speed_list, period = PERIOD)
         DATA_LABELS.append('ACCELERATION')
 
+        # Finding RPM derivative.
+        rpm_list = dict['RPM']
+        dict['RPM_DERIVATIVE'] = create_derivative(rpm_list, period = PERIOD)
+        DATA_LABELS.append('RPM_DERIVATIVE')
+
     return log_dicts
-    # Create the list of Acceleration and include it to the dict.
 
 def execute_each_log(log_paths):
     log_dicts = []
@@ -109,10 +126,16 @@ def normalize_throttle(throttle_list):
 
     return [str(normalizer(x)) for x in int_list]
 
-def calculate_acceleration(speed_list, period):
+def create_derivative(value_list, period):
+    """ Calcula as derivadas de uma lista de valores.
+
+    :param value_list: Lista de valores.
+    :param period: O período para o cálculo da derivada.
+    :return: Uma lista com as derivadas da entrada.
+    """
 
     acceleration_list = []
-    int_speed_list = [int(x) for x in speed_list]
+    int_speed_list = [int(x) for x in value_list]
     last_speed = int_speed_list[0]
 
     for speed in int_speed_list:
@@ -130,25 +153,32 @@ log_paths = []
 log_paths = set_log_full_path(log_paths = LOGS)
 
 # Returns a list of Dicts. A Dict for each log with the entries:
-# 'RPM', 'SPEED', 'THROTTLE', 'ACCELERATION'
+# 'RPM', 'SPEED', 'THROTTLE', 'ACCELERATION', 'RPM_DERIVATIVE'
 log_dicts = execute_each_log(log_paths = log_paths)
 
+# analyse_changing_gear(log_dicts[0])
+
 # PLOT ALL GRAPHS: Only for analysis.
-# list_length = len(log_dicts[0]['SPEED'])
-# x_axis = build_x_axis_values(PERIOD, list_length)
-# plot_graphs(log_dicts = log_dicts, x_axis = x_axis)
+if SHOULD_PLOT:
+    list_length = len(log_dicts[0]['SPEED'])
+    x_axis = build_x_axis_values(PERIOD, list_length)
+    plot_graphs(log_dicts = log_dicts, x_axis = x_axis)
 
 # For each log_dict there is only one process between Edison and Server.
 for dict in log_dicts:
 
-    # TODO: Criar class para comunicação com o servidor. Nessa linha,
-    # TODO: essa classe e responsável por INICIALIZAR A COMUNICAÇÃO.
-
     analysis_lenght = len(dict['RPM'])
-    strong_break_case = StrongBreakCase(period = PERIOD)
-    sender = Sender()
-    sender.start_process(START_COMMAND)
 
+    # Initializing the UseCases
+    strong_break_case = StrongBreakCase(period = PERIOD)
+    changing_gear_case = CorrectGearChangingCase(period = PERIOD)
+
+    # Initializing the Communication class
+    if SHOULD_SEND:
+        sender = Sender()
+        sender.start_process(START_COMMAND)
+
+    # Runs through every dict entry and feeds the respective Case.
     for idx in range(analysis_lenght):
 
         #################################
@@ -158,22 +188,42 @@ for dict in log_dicts:
         current_acceleration = dict['ACCELERATION'][idx]
         strong_break_case.include_new_entry(new_entry = current_acceleration)
 
+        # CorrectGearChangingCase:
+        current_acceleration_derivative = float(dict['RPM_DERIVATIVE'][idx])
+        current_rpm = int(dict['RPM'][idx])
+        current_speed = int(dict['SPEED'][idx])
+        changing_gear_case.include_new_entry(rpm_derivative = current_acceleration_derivative,
+                                             rpm = current_rpm,
+                                             speed = current_speed)
+
         #########################################
         ### Get message from analysis classes ###
         #########################################
         # StrongBreakCase:
         strong_break_case_message = strong_break_case.get_current_message(idx = idx)
 
+        # CorrectGearChangingCase:
+        changing_gear_case_message = changing_gear_case.get_current_message()
+
         #########################################
         ### Send the message to the server    ###
         #########################################
-        if strong_break_case_message is not None:
-            sender.send_message(strong_break_case_message)
+        if SHOULD_SEND:
+            if strong_break_case_message is not None:
+                sender.send_message(strong_break_case_message)
+            if changing_gear_case_message is not None:
+                sender.send_message(changing_gear_case_message)
+        # Else it prints
+        else:
+            print ('BreakCase: {0}').format(strong_break_case_message)
+            print ('ChangingGearCase: {0}').format(changing_gear_case_message)
+
 
         ###########################################
         ### Waits for the period for every loop ###
         ###########################################
-        # time.sleep(PERIOD)
+        if SHOULD_SEND:
+            time.sleep(PERIOD)
 
     #########################################
     ### It's time to generate the report  ###

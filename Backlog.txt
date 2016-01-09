@@ -1,0 +1,12 @@
+- Criar categorias para as trocas de marcha.
+    - As categorias se basearão apenas no valor do RPM.
+- Criar método de analise de trocas de marcha para report.
+    - Deverá ser uma criada uma estrutura de dados, indicando a porcentagem das categorias de trocas de marcha.
+- Testar envio de reports para o servidor.
+- Testar demonstração de mensagens no browser.
+- Mostrar os reports com gráficos no browser.
+- Criar comando de finalização de percurso para o servidor.
+    - Esse comando será usado para mostrar uma tela de inatividade.
+- Implementar IA para categorizar a condução do usuário, baseado nos dois reports recebidos.
+    - Uma classe de IA irá analisar os dois reports, analisando a porcentagem das categorias e, assim,
+    determinar a classe da condução do usuário.
