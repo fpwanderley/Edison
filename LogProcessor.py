@@ -248,6 +248,8 @@ for dict in log_dicts:
     ### It's time to generate the report  ###
     #########################################
     strong_break_case_report = strong_break_case.generate_report()
+    changing_gear_case_report = changing_gear_case.generate_report()
     print (strong_break_case_report)
+    print (changing_gear_case_report)
 
 

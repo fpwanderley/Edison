@@ -223,6 +223,15 @@ class CorrectGearChangingCase(object):
             return self.entries[-1]
         return None
 
+    def generate_report(self):
+        from collections import Counter
+        correct_entries = self.entries
+        category_list = [gear.category for gear in correct_entries]
+        category_list_len = len(category_list)
+        counter = Counter(category_list)
+        frac_dict = {key: value*100/category_list_len for key, value in counter.items()}
+        return frac_dict
+
 
 # def StrongBreakCase(acceleration_list, period):
 #

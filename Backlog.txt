@@ -1,5 +1,3 @@
-- Criar método de analise de trocas de marcha para report.
-    - Deverá ser uma criada uma estrutura de dados, indicando a porcentagem das categorias de trocas de marcha.
 - Testar envio de reports para o servidor.
 - Testar demonstração de mensagens no browser.
 - Mostrar os reports com gráficos no browser.
