@@ -6,7 +6,7 @@ BREAK_CATEGORIES = ['NORMAL LIMIT-(0.0, -5.0)', 'YELLOW LIMIT-(-5.0, -9.8)',
                     'RED LIMIT-(-9.8, -30.0)']
 
 GEAR_INTERVALS = [(0, 1000), (1000, 2000), (2000, 7000)]
-GEAR_CATEGORIES = ['NORMAL LIMIT-(0, 1000', 'YELLOW ATTENTION-(1000, 2000)',
+GEAR_CATEGORIES = ['NORMAL LIMIT-(0, 1000)', 'YELLOW LIMIT-(1000, 2000)',
                     'RED LIMIT-(2000, 7000)']
 
 COLORS = {
@@ -95,7 +95,6 @@ class GearChanging(object):
     def __init__(self, previous_rpm_derivative, current_rpm_derivative, rpm, period, speed):
         self.was_read = False
         self.is_gear_changing = False
-        self.category = 'TESTE'
         self.rpm = rpm
         self.previous_rpm_derivative = previous_rpm_derivative
         self.current_rpm_derivative = current_rpm_derivative
@@ -127,8 +126,31 @@ class GearChanging(object):
         if ((self.previous_rpm_derivative > 0 and self.current_rpm_derivative <= 0) and self.rpm > 500):
             self.is_gear_changing = True
 
+            self.set_category()
+
+    def set_category(self):
+        """ Seta a categoria de troca de marcha.
+
+        De acordo com a quantidade de RPM's do momento em que houve a troca de marcha,
+        a categoria será definida.
+
+        :return: None
+        """
+
+        rpm = int(self.rpm)
+
+        for idx, interval in enumerate(GEAR_INTERVALS):
+            min_interval = interval[0]
+            max_interval = interval[1]
+
+            if min_interval <= rpm < max_interval:
+                self.category = GEAR_CATEGORIES[idx]
+                return
+
     def __str__(self):
-        return ('Categoria: {0}; Velocidade: {1}').format(self.category, self.speed)
+        return ('Categoria: {0}; Velocidade: {1}; RPM: {2}').format(self.category,
+                                                                    self.speed,
+                                                                    self.rpm)
 
 class CorrectGearChangingCase(object):
 

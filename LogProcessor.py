@@ -18,6 +18,21 @@ START_COMMAND = 'start'
 SHOULD_PLOT = False
 SHOULD_SEND = False
 
+def timestamp(idx, period):
+    """ Formata idx e period em segundos para ser utilizado como timestamp
+
+    :param idx: indice de um for loop.
+    :param period: period em segundos
+    :return: Timestamp formatado.
+    """
+
+    total_seconds = idx*period
+
+    int_seconds = int(total_seconds)
+    cent_seconds = int((total_seconds - int_seconds)*100)
+
+    return ('{0}.{1}').format(int_seconds, cent_seconds)
+
 def set_log_full_path(log_paths):
     new_log_paths = []
     for path in log_paths:
@@ -215,8 +230,12 @@ for dict in log_dicts:
                 sender.send_message(changing_gear_case_message)
         # Else it prints
         else:
-            print ('BreakCase: {0}').format(strong_break_case_message)
-            print ('ChangingGearCase: {0}').format(changing_gear_case_message)
+            print ('{0}').format(timestamp(idx=idx, period=PERIOD))
+            if strong_break_case_message:
+                print ('BreakCase: {0}').format(strong_break_case_message)
+            if changing_gear_case_message:
+                print ('ChangingGearCase: {0}').format(changing_gear_case_message)
+            print
 
 
         ###########################################

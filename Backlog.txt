@@ -1,5 +1,3 @@
-- Criar categorias para as trocas de marcha.
-    - As categorias se basearão apenas no valor do RPM.
 - Criar método de analise de trocas de marcha para report.
     - Deverá ser uma criada uma estrutura de dados, indicando a porcentagem das categorias de trocas de marcha.
 - Testar envio de reports para o servidor.
