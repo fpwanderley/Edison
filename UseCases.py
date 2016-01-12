@@ -148,9 +148,8 @@ class GearChanging(object):
                 return
 
     def __str__(self):
-        return ('Categoria: {0}; Velocidade: {1}; RPM: {2}').format(self.category,
-                                                                    self.speed,
-                                                                    self.rpm)
+        return ('Categoria: {0}; RPM: {1}').format(self.category,
+                                                   self.rpm)
 
 class CorrectGearChangingCase(object):
 
