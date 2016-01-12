@@ -22,7 +22,8 @@
     </div>
     <script>1
     $(document).ready(function (){
-        getNewMessages();
+        setInterval(getNewMessageBreak, REQUEST_PERIOD);
+        setInterval(getNewMessageGear, REQUEST_PERIOD);
      });
     </script>
 {% endblock %}
