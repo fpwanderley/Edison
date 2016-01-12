@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block index %}
     <div id="page_wrapper">
-        <div id="path_information" class="information_div">Testando informações
+        <div id="path_information" class="information_div">Informações de Percurso
+            <!--<p id="time_counter">0.00s</p>-->
         </div>
         <table class="content_table" >
             <tr>
@@ -22,8 +23,7 @@
     </div>
     <script>1
     $(document).ready(function (){
-        setInterval(getNewMessageBreak, REQUEST_PERIOD);
-        setInterval(getNewMessageGear, REQUEST_PERIOD);
+        initialize_index();
      });
     </script>
 {% endblock %}

@@ -22,6 +22,11 @@
     background-color: yellow;
 }
 
+.information_div p{
+    float: right;
+    margin-top: 0px;
+}
+
 .message_div {
     border-radius: 10px;
     border: 2px solid #73ADB7;

@@ -1,4 +1,5 @@
 var REQUEST_PERIOD = 600;
+var TIMER_PERIOD = 1;
 var status = 'IDLE';
 
 function initialize_index(){
@@ -52,14 +53,25 @@ function getNewMessageGear(){
     });
 }
 
+function increaseTimer(){
+    timer_value = timer_value + 1;
+    var new_time = timer_value;
+    $('#time_counter')[0].innerHTML = (new_time/1000) + ' s';
+}
+
 function start_process(){
     if (status == 'IDLE'){
         status = 'ON_GOING';
 
         $('#path_information')[0].style.backgroundColor = 'green';
+
+//        timer_value = 0;
+//        timerintervalID = setInterval(increaseTimer, TIMER_PERIOD);
     }
 }
 
 function getReportData(){
+    clearInterval(timerintervalID);
+    $('#path_information')[0].style.backgroundColor = 'lightblue';
     console.log('Recuperando Report Data');
 }
