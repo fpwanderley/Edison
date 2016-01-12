@@ -14,9 +14,10 @@ DATA_LABELS = ['RPM', 'SPEED', 'THROTTLE']
 PERIOD = 0.600 #miliseconds
 
 START_COMMAND = 'start'
+FINISH_COMMAND = 'finish'
 
 SHOULD_PLOT = False
-SHOULD_SEND = False
+SHOULD_SEND = True
 
 def timestamp(idx, period):
     """ Formata idx e period em segundos para ser utilizado como timestamp
@@ -171,8 +172,6 @@ log_paths = set_log_full_path(log_paths = LOGS)
 # 'RPM', 'SPEED', 'THROTTLE', 'ACCELERATION', 'RPM_DERIVATIVE'
 log_dicts = execute_each_log(log_paths = log_paths)
 
-# analyse_changing_gear(log_dicts[0])
-
 # PLOT ALL GRAPHS: Only for analysis.
 if SHOULD_PLOT:
     list_length = len(log_dicts[0]['SPEED'])
@@ -224,10 +223,16 @@ for dict in log_dicts:
         ### Send the message to the server    ###
         #########################################
         if SHOULD_SEND:
+            timestamp_str = ('{0}').format(timestamp(idx=idx, period=PERIOD))
             if strong_break_case_message is not None:
-                sender.send_message(strong_break_case_message)
+                message = ('BreakCase: {0}').format(strong_break_case_message)
+                sender.send_message(message=strong_break_case_message,
+                                    timestamp=timestamp_str,
+                                    case='break')
             if changing_gear_case_message is not None:
-                sender.send_message(changing_gear_case_message)
+                sender.send_message(message=changing_gear_case_message,
+                                    timestamp=timestamp_str,
+                                    case='gear')
         # Else it prints
         else:
             print ('{0}').format(timestamp(idx=idx, period=PERIOD))
@@ -252,4 +257,6 @@ for dict in log_dicts:
     print (strong_break_case_report)
     print (changing_gear_case_report)
 
-
+    # Initializing the Communication class
+    if SHOULD_SEND:
+        sender.finish_process(FINISH_COMMAND)

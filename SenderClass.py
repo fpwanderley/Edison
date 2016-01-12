@@ -20,8 +20,16 @@ class Sender(object):
         }
         return post(self.command_url, payload)
 
-    def send_message(self, message):
+    def finish_process(self, message):
         payload = {
-            'message':message
+            'command':message
+        }
+        return post(self.command_url, payload)
+
+    def send_message(self, message, timestamp, case):
+        payload_message = ('{0}s: {1}').format(timestamp, message)
+        payload = {
+            'message':payload_message,
+            'case': case
         }
         return post(self.message_url, payload)
