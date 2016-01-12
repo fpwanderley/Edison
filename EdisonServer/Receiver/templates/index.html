@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <title></title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block index %}
+    <div id="page_wrapper">
+        <div id="path_information" class="information_div">Testando informações
+        </div>
+        <table class="content_table" >
+            <tr>
+            </tr>
+            <tr>
+                <td class="message_td">Break Analysis
+                    <div id="break_messages" class="message_div">
+                    </div>
+                </td>
+                <td class="message_td"> Gear Analysis
+                    <div id="gear_messages" class="message_div">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div id="Messages">
     </div>
-</body>
-</html>
-<script>
-
-    var REQUEST_PERIOD = 600;
-
-    function getNewMessages(){
-        $.get("get_next_message", function(data){
-            if (data != ""){
-                new_line = "<p>" + data + "</p>"
-                $("#Messages").append(new_line);
-            }
-        });
-    }
-
-    setInterval(getNewMessages, REQUEST_PERIOD);
-
+    <script>1
     $(document).ready(function (){
-      getNewMessages();
-    });
-</script>
+        getNewMessages();
+     });
+    </script>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <script src="{% static "js/plugins/jquery-1.11.0.js" %}"></script>
+
+    <script src="{% static "js/plugins/bootstrap/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/plugins/bootstrap-select/bootstrap-select.min.js" %}"></script>
+
+    <script src="{% static "js/plugins/highcharts/highcharts.js" %}"></script>
+    <script src="{% static "js/plugins/highcharts/highcharts-3d.js" %}"></script>
+    <script src="{% static "js/plugins/highcharts/exporting.js" %}"></script>
+    <script src="{% static "js/plugins/highcharts/highchartsSetup.js" %}"></script>
+    <script src="{% static "js/plugins/highcharts/no-data-to-display.js" %}"></script>
+
+    <script src="{% static "js/custom.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static "css/custom_css.css" %}">
+</head>
+<body>
+
+{% block index %}
+{% endblock %}
+
+</body>
+</html>
