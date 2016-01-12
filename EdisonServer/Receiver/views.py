@@ -6,6 +6,7 @@ from django.template import loader, RequestContext
 from Utils.Utils import LogManager
 
 START = 'start'
+FINISH_COMMAND = 'finish'
 
 POSSIBLE_CASES = ['gear', 'break']
 
@@ -28,6 +29,11 @@ def control(request):
                 log_manager = LogManager()
                 log_manager.create_logs()
                 return HttpResponse('Percurso Iniciado com Sucesso.')
+
+            elif command == FINISH_COMMAND:
+                log_manager = LogManager()
+                log_manager.finish_logs()
+                return HttpResponse('Percurso Finalizado com sucesso.')
 
         except:
             pass

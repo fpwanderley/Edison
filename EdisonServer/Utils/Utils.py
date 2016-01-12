@@ -32,6 +32,15 @@ class LogManager(object):
         self.write_log(log_path=GEAR_DYNAMIC_LOG_PATH, text_to_write='')
         return True
 
+    def finish_logs(self):
+
+        # Break Case
+        self.write_log(log_path=BREAK_DYNAMIC_LOG_PATH, text_to_write='finished')
+
+        # Gear Case
+        self.write_log(log_path=GEAR_DYNAMIC_LOG_PATH, text_to_write='finished')
+        return True
+
     def append_to_all_logs(self, text_text_append, case):
 
         log_path, dynamic_log_path = self.get_correct_logs(case=case)
