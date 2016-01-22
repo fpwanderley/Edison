@@ -1,164 +1,179 @@
 
-0.0s: NORMAL LIMIT-(0.0, -5.0)
-0.60s: NORMAL LIMIT-(0.0, -5.0)
-1.19s: NORMAL LIMIT-(0.0, -5.0)
-1.79s: NORMAL LIMIT-(0.0, -5.0)
-1.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 790
-2.39s: NORMAL LIMIT-(0.0, -5.0)
-3.0s: NORMAL LIMIT-(0.0, -5.0)
-3.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 794
-3.59s: NORMAL LIMIT-(0.0, -5.0)
-4.20s: NORMAL LIMIT-(0.0, -5.0)
-4.79s: NORMAL LIMIT-(0.0, -5.0)
-4.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 747
-5.39s: NORMAL LIMIT-(0.0, -5.0)
-6.0s: NORMAL LIMIT-(0.0, -5.0)
-6.59s: NORMAL LIMIT-(0.0, -5.0)
-7.19s: NORMAL LIMIT-(0.0, -5.0)
-7.19s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 812
-7.79s: NORMAL LIMIT-(0.0, -5.0)
-8.40s: NORMAL LIMIT-(0.0, -5.0)
-9.0s: NORMAL LIMIT-(0.0, -5.0)
-9.59s: NORMAL LIMIT-(0.0, -5.0)
-9.59s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 874
-10.19s: NORMAL LIMIT-(0.0, -5.0)
-10.79s: NORMAL LIMIT-(0.0, -5.0)
-10.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 676
-11.40s: NORMAL LIMIT-(0.0, -5.0)
-13.19s: NORMAL LIMIT-(0.0, -5.0)
-13.19s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 836
-13.79s: NORMAL LIMIT-(0.0, -5.0)
-14.39s: NORMAL LIMIT-(0.0, -5.0)
-15.0s: NORMAL LIMIT-(0.0, -5.0)
-15.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 893
-15.59s: NORMAL LIMIT-(0.0, -5.0)
-16.19s: NORMAL LIMIT-(0.0, -5.0)
-16.80s: YELLOW LIMIT-(-5.0, -9.8)
-17.39s: NORMAL LIMIT-(0.0, -5.0)
-18.0s: NORMAL LIMIT-(0.0, -5.0)
-18.59s: NORMAL LIMIT-(0.0, -5.0)
-19.19s: NORMAL LIMIT-(0.0, -5.0)
-19.19s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 841
-19.80s: NORMAL LIMIT-(0.0, -5.0)
-20.39s: NORMAL LIMIT-(0.0, -5.0)
-20.39s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 844
-21.0s: NORMAL LIMIT-(0.0, -5.0)
-21.59s: NORMAL LIMIT-(0.0, -5.0)
-22.19s: NORMAL LIMIT-(0.0, -5.0)
-22.80s: NORMAL LIMIT-(0.0, -5.0)
-22.80s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 797
-23.39s: NORMAL LIMIT-(0.0, -5.0)
-24.0s: NORMAL LIMIT-(0.0, -5.0)
-24.59s: NORMAL LIMIT-(0.0, -5.0)
-24.59s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 796
-25.19s: NORMAL LIMIT-(0.0, -5.0)
-25.80s: NORMAL LIMIT-(0.0, -5.0)
-26.39s: NORMAL LIMIT-(0.0, -5.0)
-26.39s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 795
-27.0s: NORMAL LIMIT-(0.0, -5.0)
-27.59s: NORMAL LIMIT-(0.0, -5.0)
-28.19s: NORMAL LIMIT-(0.0, -5.0)
-28.79s: NORMAL LIMIT-(0.0, -5.0)
-28.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 795
-29.39s: NORMAL LIMIT-(0.0, -5.0)
-30.0s: NORMAL LIMIT-(0.0, -5.0)
-30.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 799
-30.59s: NORMAL LIMIT-(0.0, -5.0)
-31.19s: NORMAL LIMIT-(0.0, -5.0)
-31.19s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 801
-31.79s: NORMAL LIMIT-(0.0, -5.0)
-32.39s: NORMAL LIMIT-(0.0, -5.0)
-32.39s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 792
-33.0s: NORMAL LIMIT-(0.0, -5.0)
-33.60s: NORMAL LIMIT-(0.0, -5.0)
-33.60s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 796
-34.19s: NORMAL LIMIT-(0.0, -5.0)
-34.79s: NORMAL LIMIT-(0.0, -5.0)
-35.39s: NORMAL LIMIT-(0.0, -5.0)
-35.39s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 796
-36.0s: NORMAL LIMIT-(0.0, -5.0)
-36.60s: NORMAL LIMIT-(0.0, -5.0)
-36.60s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 795
-37.19s: NORMAL LIMIT-(0.0, -5.0)
-37.79s: NORMAL LIMIT-(0.0, -5.0)
-37.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 794
-38.39s: NORMAL LIMIT-(0.0, -5.0)
-39.0s: NORMAL LIMIT-(0.0, -5.0)
-39.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 792
-39.60s: NORMAL LIMIT-(0.0, -5.0)
-40.19s: NORMAL LIMIT-(0.0, -5.0)
-40.19s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 799
-40.79s: NORMAL LIMIT-(0.0, -5.0)
-41.39s: NORMAL LIMIT-(0.0, -5.0)
-42.0s: NORMAL LIMIT-(0.0, -5.0)
-42.60s: NORMAL LIMIT-(0.0, -5.0)
-43.19s: NORMAL LIMIT-(0.0, -5.0)
-43.19s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 773
-43.79s: NORMAL LIMIT-(0.0, -5.0)
-44.39s: NORMAL LIMIT-(0.0, -5.0)
-44.39s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 785
-45.0s: NORMAL LIMIT-(0.0, -5.0)
-45.60s: NORMAL LIMIT-(0.0, -5.0)
-45.60s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 796
-46.19s: NORMAL LIMIT-(0.0, -5.0)
-46.79s: NORMAL LIMIT-(0.0, -5.0)
-46.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 795
-47.39s: NORMAL LIMIT-(0.0, -5.0)
-48.0s: NORMAL LIMIT-(0.0, -5.0)
-48.60s: NORMAL LIMIT-(0.0, -5.0)
-48.60s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 795
-49.19s: NORMAL LIMIT-(0.0, -5.0)
-49.79s: NORMAL LIMIT-(0.0, -5.0)
-50.39s: NORMAL LIMIT-(0.0, -5.0)
-50.39s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 778
-51.0s: NORMAL LIMIT-(0.0, -5.0)
-51.60s: NORMAL LIMIT-(0.0, -5.0)
-52.19s: NORMAL LIMIT-(0.0, -5.0)
-52.79s: NORMAL LIMIT-(0.0, -5.0)
-52.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 769
-53.39s: NORMAL LIMIT-(0.0, -5.0)
-54.0s: NORMAL LIMIT-(0.0, -5.0)
-54.60s: NORMAL LIMIT-(0.0, -5.0)
-55.19s: NORMAL LIMIT-(0.0, -5.0)
-55.79s: NORMAL LIMIT-(0.0, -5.0)
-55.79s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 802
-56.39s: NORMAL LIMIT-(0.0, -5.0)
-57.0s: NORMAL LIMIT-(0.0, -5.0)
-57.59s: NORMAL LIMIT-(0.0, -5.0)
-58.19s: NORMAL LIMIT-(0.0, -5.0)
-58.19s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 796
-58.79s: NORMAL LIMIT-(0.0, -5.0)
-59.39s: NORMAL LIMIT-(0.0, -5.0)
-60.0s: NORMAL LIMIT-(0.0, -5.0)
-60.59s: NORMAL LIMIT-(0.0, -5.0)
-60.59s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 791
-61.19s: NORMAL LIMIT-(0.0, -5.0)
-61.79s: Categoria: YELLOW LIMIT-(1000, 2000); RPM: 1003
-62.39s: NORMAL LIMIT-(0.0, -5.0)
-63.0s: NORMAL LIMIT-(0.0, -5.0)
-63.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 923
-64.20s: NORMAL LIMIT-(0.0, -5.0)
-65.39s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 788
-66.0s: NORMAL LIMIT-(0.0, -5.0)
-66.59s: NORMAL LIMIT-(0.0, -5.0)
-66.59s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 880
-67.20s: NORMAL LIMIT-(0.0, -5.0)
-67.79s: NORMAL LIMIT-(0.0, -5.0)
-68.39s: NORMAL LIMIT-(0.0, -5.0)
-69.0s: NORMAL LIMIT-(0.0, -5.0)
-69.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 813
-69.59s: NORMAL LIMIT-(0.0, -5.0)
-70.20s: NORMAL LIMIT-(0.0, -5.0)
-70.20s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 851
-70.79s: NORMAL LIMIT-(0.0, -5.0)
-71.39s: NORMAL LIMIT-(0.0, -5.0)
-72.0s: NORMAL LIMIT-(0.0, -5.0)
-72.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 805
-72.59s: NORMAL LIMIT-(0.0, -5.0)
-73.20s: NORMAL LIMIT-(0.0, -5.0)
-73.20s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 829
-73.79s: NORMAL LIMIT-(0.0, -5.0)
-74.39s: NORMAL LIMIT-(0.0, -5.0)
-75.0s: NORMAL LIMIT-(0.0, -5.0)
-75.0s: Categoria: NORMAL LIMIT-(0, 1000); RPM: 896
-75.59s: YELLOW LIMIT-(-5.0, -9.8)
+{'data': '1.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 790', 'type': 'chat_data'}
+{'data': '3.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 794', 'type': 'chat_data'}
+{'data': '4.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 747', 'type': 'chat_data'}
+{'data': '7.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 812', 'type': 'chat_data'}
+{'data': '9.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 874', 'type': 'chat_data'}
+{'data': '10.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 676', 'type': 'chat_data'}
+{'data': '13.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 836', 'type': 'chat_data'}
+{'data': '15.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 893', 'type': 'chat_data'}
+{'data': '19.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 841', 'type': 'chat_data'}
+{'data': '20.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 844', 'type': 'chat_data'}
+{'data': '22.80s: Categoria: GREEN - (0, 1000)RPM; RPM: 797', 'type': 'chat_data'}
+{'data': '24.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 796', 'type': 'chat_data'}
+{'data': '26.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 795', 'type': 'chat_data'}
+{'data': '28.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 795', 'type': 'chat_data'}
+{'data': '30.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 799', 'type': 'chat_data'}
+{'data': '31.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 801', 'type': 'chat_data'}
+{'data': '32.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 792', 'type': 'chat_data'}
+{'data': '33.60s: Categoria: GREEN - (0, 1000)RPM; RPM: 796', 'type': 'chat_data'}
+{'data': '35.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 796', 'type': 'chat_data'}
+{'data': '36.60s: Categoria: GREEN - (0, 1000)RPM; RPM: 795', 'type': 'chat_data'}
+{'data': '37.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 794', 'type': 'chat_data'}
+{'data': '39.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 792', 'type': 'chat_data'}
+{'data': '40.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 799', 'type': 'chat_data'}
+{'data': '43.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 773', 'type': 'chat_data'}
+{'data': '44.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 785', 'type': 'chat_data'}
+{'data': '45.60s: Categoria: GREEN - (0, 1000)RPM; RPM: 796', 'type': 'chat_data'}
+{'data': '46.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 795', 'type': 'chat_data'}
+{'data': '48.60s: Categoria: GREEN - (0, 1000)RPM; RPM: 795', 'type': 'chat_data'}
+{'data': '50.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 778', 'type': 'chat_data'}
+{'data': '52.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 769', 'type': 'chat_data'}
+{'data': '55.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 802', 'type': 'chat_data'}
+{'data': '58.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 796', 'type': 'chat_data'}
+{'data': '60.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 791', 'type': 'chat_data'}
+{'data': '61.79s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1003', 'type': 'chat_data'}
+{'data': '63.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 923', 'type': 'chat_data'}
+{'data': '65.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 788', 'type': 'chat_data'}
+{'data': '66.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 880', 'type': 'chat_data'}
+{'data': '69.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 813', 'type': 'chat_data'}
+{'data': '70.20s: Categoria: GREEN - (0, 1000)RPM; RPM: 851', 'type': 'chat_data'}
+{'data': '72.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 805', 'type': 'chat_data'}
+{'data': '73.20s: Categoria: GREEN - (0, 1000)RPM; RPM: 829', 'type': 'chat_data'}
+{'data': '75.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 896', 'type': 'chat_data'}
+{'data': '78.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 820', 'type': 'chat_data'}
+{'data': '79.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 878', 'type': 'chat_data'}
+{'data': '82.20s: Categoria: GREEN - (0, 1000)RPM; RPM: 881', 'type': 'chat_data'}
+{'data': '85.20s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1051', 'type': 'chat_data'}
+{'data': '90.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1184', 'type': 'chat_data'}
+{'data': '94.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 866', 'type': 'chat_data'}
+{'data': '96.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 811', 'type': 'chat_data'}
+{'data': '97.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 814', 'type': 'chat_data'}
+{'data': '102.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 815', 'type': 'chat_data'}
+{'data': '105.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 809', 'type': 'chat_data'}
+{'data': '106.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 787', 'type': 'chat_data'}
+{'data': '108.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 805', 'type': 'chat_data'}
+{'data': '109.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 789', 'type': 'chat_data'}
+{'data': '111.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 788', 'type': 'chat_data'}
+{'data': '112.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 792', 'type': 'chat_data'}
+{'data': '114.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 789', 'type': 'chat_data'}
+{'data': '115.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 785', 'type': 'chat_data'}
+{'data': '116.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 799', 'type': 'chat_data'}
+{'data': '119.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 796', 'type': 'chat_data'}
+{'data': '120.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 784', 'type': 'chat_data'}
+{'data': '121.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 782', 'type': 'chat_data'}
+{'data': '123.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 804', 'type': 'chat_data'}
+{'data': '126.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 796', 'type': 'chat_data'}
+{'data': '127.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 800', 'type': 'chat_data'}
+{'data': '129.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 785', 'type': 'chat_data'}
+{'data': '130.19s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1476', 'type': 'chat_data'}
+{'data': '132.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1018', 'type': 'chat_data'}
+{'data': '135.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 938', 'type': 'chat_data'}
+{'data': '139.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 862', 'type': 'chat_data'}
+{'data': '141.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 824', 'type': 'chat_data'}
+{'data': '142.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 835', 'type': 'chat_data'}
+{'data': '143.40s: Categoria: GREEN - (0, 1000)RPM; RPM: 828', 'type': 'chat_data'}
+{'data': '144.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 830', 'type': 'chat_data'}
+{'data': '147.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 791', 'type': 'chat_data'}
+{'data': '150.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 802', 'type': 'chat_data'}
+{'data': '151.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 781', 'type': 'chat_data'}
+{'data': '153.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 785', 'type': 'chat_data'}
+{'data': '154.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 809', 'type': 'chat_data'}
+{'data': '156.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 798', 'type': 'chat_data'}
+{'data': '157.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 798', 'type': 'chat_data'}
+{'data': '158.40s: Categoria: GREEN - (0, 1000)RPM; RPM: 792', 'type': 'chat_data'}
+{'data': '159.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 803', 'type': 'chat_data'}
+{'data': '160.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 784', 'type': 'chat_data'}
+{'data': '162.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 806', 'type': 'chat_data'}
+{'data': '163.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 795', 'type': 'chat_data'}
+{'data': '165.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 799', 'type': 'chat_data'}
+{'data': '168.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 800', 'type': 'chat_data'}
+{'data': '171.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1379', 'type': 'chat_data'}
+{'data': '173.40s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1414', 'type': 'chat_data'}
+{'data': '177.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1065', 'type': 'chat_data'}
+{'data': '181.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 864', 'type': 'chat_data'}
+{'data': '185.40s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1031', 'type': 'chat_data'}
+{'data': '189.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 630', 'type': 'chat_data'}
+{'data': '191.40s: Categoria: GREEN - (0, 1000)RPM; RPM: 889', 'type': 'chat_data'}
+{'data': '192.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 883', 'type': 'chat_data'}
+{'data': '194.40s: Categoria: GREEN - (0, 1000)RPM; RPM: 777', 'type': 'chat_data'}
+{'data': '198.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1666', 'type': 'chat_data'}
+{'data': '199.79s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1448', 'type': 'chat_data'}
+{'data': '203.40s: Categoria: GREEN - (0, 1000)RPM; RPM: 878', 'type': 'chat_data'}
+{'data': '207.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 939', 'type': 'chat_data'}
+{'data': '213.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 950', 'type': 'chat_data'}
+{'data': '216.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1411', 'type': 'chat_data'}
+{'data': '219.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1492', 'type': 'chat_data'}
+{'data': '220.79s: Categoria: GREEN - (0, 1000)RPM; RPM: 864', 'type': 'chat_data'}
+{'data': '222.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1413', 'type': 'chat_data'}
+{'data': '225.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1845', 'type': 'chat_data'}
+{'data': '231.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1679', 'type': 'chat_data'}
+{'data': '238.79s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1897', 'type': 'chat_data'}
+{'data': '240.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1915', 'type': 'chat_data'}
+{'data': '241.79s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1923', 'type': 'chat_data'}
+{'data': '243.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1926', 'type': 'chat_data'}
+{'data': '244.19s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1933', 'type': 'chat_data'}
+{'data': '245.39s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1932', 'type': 'chat_data'}
+{'data': '246.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1938', 'type': 'chat_data'}
+{'data': '252.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1623', 'type': 'chat_data'}
+{'data': '257.39s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1528', 'type': 'chat_data'}
+{'data': '258.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1524', 'type': 'chat_data'}
+{'data': '264.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1730', 'type': 'chat_data'}
+{'data': '267.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1761', 'type': 'chat_data'}
+{'data': '273.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 849', 'type': 'chat_data'}
+{'data': '274.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 843', 'type': 'chat_data'}
+{'data': '278.39s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1263', 'type': 'chat_data'}
+{'data': '281.39s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1226', 'type': 'chat_data'}
+{'data': '284.39s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1440', 'type': 'chat_data'}
+{'data': '286.80s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1509', 'type': 'chat_data'}
+{'data': '288.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 922', 'type': 'chat_data'}
+{'data': '292.19s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1114', 'type': 'chat_data'}
+{'data': '297.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 833', 'type': 'chat_data'}
+{'data': '298.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 839', 'type': 'chat_data'}
+{'data': '299.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 802', 'type': 'chat_data'}
+{'data': '301.19s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1312', 'type': 'chat_data'}
+{'data': '304.80s: Categoria: RED - (2000, 7000)RPM; RPM: 2098', 'type': 'chat_data'}
+{'data': '308.39s: Categoria: RED - (2000, 7000)RPM; RPM: 2153', 'type': 'chat_data'}
+{'data': '313.80s: Categoria: RED - (2000, 7000)RPM; RPM: 2347', 'type': 'chat_data'}
+{'data': '315.59s: Categoria: RED - (2000, 7000)RPM; RPM: 2337', 'type': 'chat_data'}
+{'data': '316.80s: Categoria: RED - (2000, 7000)RPM; RPM: 2338', 'type': 'chat_data'}
+{'data': '319.19s: Categoria: RED - (2000, 7000)RPM; RPM: 2343', 'type': 'chat_data'}
+{'data': '321.0s: Categoria: RED - (2000, 7000)RPM; RPM: 2330', 'type': 'chat_data'}
+{'data': '322.80s: Categoria: RED - (2000, 7000)RPM; RPM: 2309', 'type': 'chat_data'}
+{'data': '328.80s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1483', 'type': 'chat_data'}
+{'data': '332.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 822', 'type': 'chat_data'}
+{'data': '333.59s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1369', 'type': 'chat_data'}
+{'data': '341.39s: Categoria: RED - (2000, 7000)RPM; RPM: 2411', 'type': 'chat_data'}
+{'data': '345.0s: Categoria: RED - (2000, 7000)RPM; RPM: 2715', 'type': 'chat_data'}
+{'data': '350.39s: Categoria: RED - (2000, 7000)RPM; RPM: 2496', 'type': 'chat_data'}
+{'data': '354.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1774', 'type': 'chat_data'}
+{'data': '355.19s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1726', 'type': 'chat_data'}
+{'data': '364.19s: Categoria: RED - (2000, 7000)RPM; RPM: 2114', 'type': 'chat_data'}
+{'data': '373.80s: Categoria: GREEN - (0, 1000)RPM; RPM: 880', 'type': 'chat_data'}
+{'data': '375.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 862', 'type': 'chat_data'}
+{'data': '378.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 877', 'type': 'chat_data'}
+{'data': '380.39s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1237', 'type': 'chat_data'}
+{'data': '382.80s: Categoria: GREEN - (0, 1000)RPM; RPM: 871', 'type': 'chat_data'}
+{'data': '384.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 855', 'type': 'chat_data'}
+{'data': '388.19s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1375', 'type': 'chat_data'}
+{'data': '392.39s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1535', 'type': 'chat_data'}
+{'data': '394.19s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1405', 'type': 'chat_data'}
+{'data': '396.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1393', 'type': 'chat_data'}
+{'data': '399.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1705', 'type': 'chat_data'}
+{'data': '401.39s: Categoria: RED - (2000, 7000)RPM; RPM: 2333', 'type': 'chat_data'}
+{'data': '405.59s: Categoria: RED - (2000, 7000)RPM; RPM: 2258', 'type': 'chat_data'}
+{'data': '411.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1657', 'type': 'chat_data'}
+{'data': '414.0s: Categoria: YELLOW - (1000, 2000)RPM; RPM: 1523', 'type': 'chat_data'}
+{'data': '419.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 855', 'type': 'chat_data'}
+{'data': '421.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 837', 'type': 'chat_data'}
+{'data': '422.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 834', 'type': 'chat_data'}
+{'data': '424.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 820', 'type': 'chat_data'}
+{'data': '426.0s: Categoria: GREEN - (0, 1000)RPM; RPM: 827', 'type': 'chat_data'}
+{'data': '427.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 881', 'type': 'chat_data'}
+{'data': '430.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 955', 'type': 'chat_data'}
+{'data': '431.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 912', 'type': 'chat_data'}
+{'data': '432.59s: Categoria: GREEN - (0, 1000)RPM; RPM: 897', 'type': 'chat_data'}
+{'data': '433.80s: Categoria: GREEN - (0, 1000)RPM; RPM: 872', 'type': 'chat_data'}
+{'data': '436.19s: Categoria: GREEN - (0, 1000)RPM; RPM: 827', 'type': 'chat_data'}
+{'data': '437.39s: Categoria: GREEN - (0, 1000)RPM; RPM: 869', 'type': 'chat_data'}
+{'data': [['GREEN - (0, 1000)RPM', 66.1], ['YELLOW - (1000, 2000)RPM', 25.99], ['RED - (2000, 7000)RPM', 7.91]], 'type': 'chart_data'}

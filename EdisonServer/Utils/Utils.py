@@ -58,6 +58,17 @@ class LogManager(object):
             log_text = log.readlines()
         return log_text
 
+    def read_first_line(self,case):
+        log_path, dynamic_log_path = self.get_correct_logs(case=case)
+
+        log_text_lines = self.read_lines(log_path=dynamic_log_path)
+
+        if len(log_text_lines) > 0:
+            wanted_content = log_text_lines[0]
+            return wanted_content
+        else:
+            return None
+
     def read_first_line_and_erase(self, case):
 
         log_path, dynamic_log_path = self.get_correct_logs(case=case)

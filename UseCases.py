@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # Detects and show a report about the case where the driver is pressing the break pedal
 # strongly.
-BREAK_INTERVALS = [(0.0, -5.0), (-5.0, -9.8), (-9.8, -30.0)]
-BREAK_CATEGORIES = ['NORMAL LIMIT-(0.0, -5.0)', 'YELLOW LIMIT-(-5.0, -9.8)',
-                    'RED LIMIT-(-9.8, -30.0)']
+BREAK_INTERVALS = [(0.0, -1.0), (-1.0, -2.0), (-2.0, -10.0)]
+BREAK_CATEGORIES = ['GREEN - (0.0, -1.0)m/s2', 'YELLOW - (-1.0, -2.0)m/s2',
+                    'RED  - (-2.0, -10.0)m/s2']
 
 GEAR_INTERVALS = [(0, 1000), (1000, 2000), (2000, 7000)]
-GEAR_CATEGORIES = ['NORMAL LIMIT-(0, 1000)', 'YELLOW LIMIT-(1000, 2000)',
-                    'RED LIMIT-(2000, 7000)']
+GEAR_CATEGORIES = ['GREEN - (0, 1000)RPM', 'YELLOW - (1000, 2000)RPM',
+                    'RED - (2000, 7000)RPM']
 
 COLORS = {
     'NORMAL LIMIT-(0.0, -2.5)': '#009a00',
@@ -17,6 +17,7 @@ COLORS = {
 }
 
 break_analysis_file_path = 'BreakAnalysis.txt'
+
 
 class Acceleration:
     def __init__(self, acceleration):
@@ -74,21 +75,38 @@ class StrongBreakCase(object):
 
         # idx was not informed. Returns the status for the last entry.
         if not idx:
-            return self.get_category_for_entry(self.get_last_entry())
+            message = self.get_category_for_entry(self.get_last_entry())
         else:
-            return self.get_category_for_entry(self.entries[idx])
+            message = self.get_category_for_entry(self.entries[idx])
+
+        return message
 
     def get_correct_entries(self, entries):
         return [acce for acce in entries if acce.category != None ]
 
     def generate_report(self):
+
+        def _order_class_dict(frac_dict):
+
+            ordered_list = []
+
+            for break_class in BREAK_CATEGORIES:
+                try:
+                    new_entry = [break_class, frac_dict[break_class]]
+                    ordered_list.append(new_entry)
+                except:
+                    pass
+
+            return ordered_list
+
         from collections import Counter
         correct_entries = self.get_correct_entries(entries=self.entries)
         category_list = [acc.category for acc in correct_entries]
         category_list_len = len(category_list)
         counter = Counter(category_list)
-        frac_dict = {key: value*100/category_list_len for key, value in counter.items()}
-        return frac_dict
+        frac_dict = {key: round(value*100.0/category_list_len, 2) for key, value in counter.items()}
+        ordered_dict = _order_class_dict(frac_dict)
+        return ordered_dict
 
 class GearChanging(object):
 
@@ -223,13 +241,40 @@ class CorrectGearChangingCase(object):
         return None
 
     def generate_report(self):
+        """ Gera os dados a serem jogados nos graficos pizza.
+
+        O formato da estrutura de dados deve ser:
+
+        data = {
+            ['Green', 50.0],
+            ['Yellow', 20.0],
+            ['Red', 30.0]]
+        }
+
+        :return:
+        """
         from collections import Counter
+
+        def _order_class_dict(frac_dict):
+
+            ordered_list = []
+
+            for gear_class in GEAR_CATEGORIES:
+                try:
+                    new_entry = [gear_class, frac_dict[gear_class]]
+                    ordered_list.append(new_entry)
+                except:
+                    pass
+
+            return ordered_list
+
         correct_entries = self.entries
         category_list = [gear.category for gear in correct_entries]
         category_list_len = len(category_list)
         counter = Counter(category_list)
-        frac_dict = {key: value*100/category_list_len for key, value in counter.items()}
-        return frac_dict
+        frac_dict = {key: round(value*100.0/category_list_len, 2) for key, value in counter.items()}
+        ordered_dict = _order_class_dict(frac_dict)
+        return ordered_dict
 
 
 # def StrongBreakCase(acceleration_list, period):

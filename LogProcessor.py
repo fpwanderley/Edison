@@ -2,13 +2,14 @@
 from os.path import join, dirname
 from UseCases import StrongBreakCase, CorrectGearChangingCase
 import time
-from SenderClass import Sender
+from SenderClass import Sender, CHART_DATA
 from ChartProcessors import build_x_axis_values, plot_graphs
 
 MAIN_PATH = dirname(__file__)
 LOGS_PATH = join(MAIN_PATH, 'Logs')
 
 LOGS = ['Rhudney - 27_10.txt']
+# LOGS = ['min.txt']
 DATA_LABELS = ['RPM', 'SPEED', 'THROTTLE']
 
 PERIOD = 0.600 #miliseconds
@@ -97,7 +98,8 @@ def post_process_dicts(log_dicts):
 
         # Finding Acceleration
         speed_list = dict['SPEED']
-        dict['ACCELERATION'] = create_derivative(speed_list, period = PERIOD)
+        speed_list_ms = [str(float(speed)/(3.6)) for speed in speed_list]
+        dict['ACCELERATION'] = create_derivative(speed_list_ms, period = PERIOD)
         DATA_LABELS.append('ACCELERATION')
 
         # Finding RPM derivative.
@@ -151,10 +153,10 @@ def create_derivative(value_list, period):
     """
 
     acceleration_list = []
-    int_speed_list = [int(x) for x in value_list]
-    last_speed = int_speed_list[0]
+    float_speed_list = [float(x) for x in value_list]
+    last_speed = float_speed_list[0]
 
-    for speed in int_speed_list:
+    for speed in float_speed_list:
 
         acceleration = round((speed - last_speed)/period, 2)
         acceleration_list.append(acceleration)
@@ -254,9 +256,19 @@ for dict in log_dicts:
     #########################################
     strong_break_case_report = strong_break_case.generate_report()
     changing_gear_case_report = changing_gear_case.generate_report()
-    print (strong_break_case_report)
-    print (changing_gear_case_report)
+    print ('Report das Frenagens: {0}').format(strong_break_case_report)
+    print ('Report das Trocas de Marcha: {0}').format(changing_gear_case_report)
 
-    # Initializing the Communication class
-    if SHOULD_SEND:
-        sender.finish_process(FINISH_COMMAND)
+    # # Initializing the Communication class
+    # if SHOULD_SEND:
+    #     sender.finish_process(FINISH_COMMAND)
+
+    # Sends the report information.
+    sender.send_message(message=strong_break_case_report,
+                        timestamp=timestamp_str,
+                        case='break',
+                        type=CHART_DATA)
+    sender.send_message(message=changing_gear_case_report,
+                        timestamp=timestamp_str,
+                        case='gear',
+                        type=CHART_DATA)

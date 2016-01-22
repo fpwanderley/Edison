@@ -13,6 +13,7 @@ def plot_graphs(log_dicts, x_axis, data_labels=None):
     import matplotlib.pyplot as plt
 
     DATA_LABELS = ['RPM', 'SPEED', 'THROTTLE']
+    DATA_LABELS = ['RPM_DERIVATIVE']
 
     if data_labels:
         DATA_LABELS = data_labels

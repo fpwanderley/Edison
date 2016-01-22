@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader, RequestContext
 
 from Utils.Utils import LogManager
@@ -39,6 +39,7 @@ def control(request):
             pass
 
 # Create your views here.
+# http://127.0.0.1:8000/receiver/receive_message_data
 @csrf_exempt
 def receive_message_data(request):
     if request.method == 'POST':
@@ -56,13 +57,18 @@ def receive_message_data(request):
 def get_next_message(request):
 
     case = request.GET['case']
+    report = request.GET.get('report', False)
 
     if not case in POSSIBLE_CASES:
         case = 'break'
 
     log_manager = LogManager()
-    message = log_manager.read_first_line_and_erase(case=case)
+    if report:
+        message = log_manager.read_first_line(case=case)
+    else:
+        message = log_manager.read_first_line_and_erase(case=case)
+
     if message:
-        return HttpResponse(message)
+        return HttpResponse(message.replace("'", '"'))
     else:
         return HttpResponse('')

@@ -4,26 +4,24 @@
         <div id="path_information" class="information_div">Informações de Percurso
             <!--<p id="time_counter">0.00s</p>-->
         </div>
-        <table class="content_table" >
-            <tr>
-            </tr>
-            <tr>
-                <td class="message_td">Break Analysis
-                    <div id="break_messages" class="message_div">
-                    </div>
-                </td>
-                <td class="message_td"> Gear Analysis
-                    <div id="gear_messages" class="message_div">
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div id='message_div'>
+            <div id='break_div' class="col-md-6 ">
+                <div id="break_title" style="text-align: center">Break Analysis</div>
+                <div id="break_messages" class="message_div "></div>
+                <div id="break_chart_container" class="display-none"  style="height: 400px"></div>
+            </div>
+            <div id='gear_div' class="col-md-6 ">
+                <div id="gear_title"style="text-align: center">Gear Analysis</div>
+                <div id="gear_messages" class="message_div"></div>
+                <div id="gear_chart_container" class="display-none" style="height: 400px"></div>
+            </div>
+        </div>
     </div>
-    <div id="Messages">
-    </div>
-    <script>1
+<script>
     $(document).ready(function (){
         initialize_index();
      });
-    </script>
+</script>
 {% endblock %}
+
+
