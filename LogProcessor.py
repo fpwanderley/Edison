@@ -2,7 +2,7 @@
 from os.path import join, dirname
 from UseCases import StrongBreakCase, CorrectGearChangingCase
 import time
-from SenderClass import Sender, CHART_DATA
+from SenderClass import Sender, CHART_DATA, IA_DATA
 from ChartProcessors import build_x_axis_values, plot_graphs
 
 MAIN_PATH = dirname(__file__)
@@ -18,7 +18,7 @@ START_COMMAND = 'start'
 FINISH_COMMAND = 'finish'
 
 SHOULD_PLOT = False
-SHOULD_SEND = True
+SHOULD_SEND = False
 
 def timestamp(idx, period):
     """ Formata idx e period em segundos para ser utilizado como timestamp
@@ -190,7 +190,8 @@ for dict in log_dicts:
     changing_gear_case = CorrectGearChangingCase(period = PERIOD)
 
     # Initializing the Communication class
-    if SHOULD_SEND:
+    # if SHOULD_SEND:
+    if True:
         sender = Sender()
         sender.start_process(START_COMMAND)
 
@@ -242,7 +243,6 @@ for dict in log_dicts:
                 print ('BreakCase: {0}').format(strong_break_case_message)
             if changing_gear_case_message:
                 print ('ChangingGearCase: {0}').format(changing_gear_case_message)
-            print
 
 
         ###########################################
@@ -259,16 +259,30 @@ for dict in log_dicts:
     print ('Report das Frenagens: {0}').format(strong_break_case_report)
     print ('Report das Trocas de Marcha: {0}').format(changing_gear_case_report)
 
-    # # Initializing the Communication class
-    # if SHOULD_SEND:
-    #     sender.finish_process(FINISH_COMMAND)
-
     # Sends the report information.
-    sender.send_message(message=strong_break_case_report,
-                        timestamp=timestamp_str,
-                        case='break',
-                        type=CHART_DATA)
-    sender.send_message(message=changing_gear_case_report,
-                        timestamp=timestamp_str,
-                        case='gear',
-                        type=CHART_DATA)
+    if SHOULD_SEND:
+        sender.send_message(message=strong_break_case_report,
+                            timestamp=timestamp_str,
+                            case='break',
+                            type=CHART_DATA)
+        sender.send_message(message=changing_gear_case_report,
+                            timestamp=timestamp_str,
+                            case='gear',
+                            type=CHART_DATA)
+
+    #########################################
+    ### It's time to classify the path    ###
+    #########################################
+    from KNN.knn import KnnClassifier
+    K = 3
+    test_element = strong_break_case.get_report_for_IA() + changing_gear_case.get_report_for_IA()
+    knn = KnnClassifier(attr_qtt=6, class_qtt=5, db_size=200, file_name="BDGerado.txt", trainning_perc=100)
+    element_class = knn.classify_element(test_element=test_element,k=K)
+
+    # if SHOULD_SEND:
+    if True:
+        sender.send_message(message=element_class,
+                            timestamp='',
+                            case='',
+                            type=IA_DATA)
+
