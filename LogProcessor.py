@@ -18,7 +18,8 @@ START_COMMAND = 'start'
 FINISH_COMMAND = 'finish'
 
 SHOULD_PLOT = False
-SHOULD_SEND = False
+# SHOULD_SEND = False
+SHOULD_SEND = True
 
 def timestamp(idx, period):
     """ Formata idx e period em segundos para ser utilizado como timestamp
@@ -190,8 +191,7 @@ for dict in log_dicts:
     changing_gear_case = CorrectGearChangingCase(period = PERIOD)
 
     # Initializing the Communication class
-    # if SHOULD_SEND:
-    if True:
+    if SHOULD_SEND:
         sender = Sender()
         sender.start_process(START_COMMAND)
 
@@ -279,8 +279,7 @@ for dict in log_dicts:
     knn = KnnClassifier(attr_qtt=6, class_qtt=5, db_size=200, file_name="BDGerado.txt", trainning_perc=100)
     element_class = knn.classify_element(test_element=test_element,k=K)
 
-    # if SHOULD_SEND:
-    if True:
+    if SHOULD_SEND:
         sender.send_message(message=element_class,
                             timestamp='',
                             case='',

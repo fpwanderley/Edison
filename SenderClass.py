@@ -7,6 +7,7 @@ COMMAND_URL = '/receiver/receive_command'
 
 CHART_DATA = 'chart_data'
 CHAT_DATA = 'chat_data'
+IA_DATA = 'ia_data'
 
 class Sender(object):
 
@@ -41,6 +42,9 @@ class Sender(object):
             payload_message = self.create_JSON_obj(type=type,
                                                    data=('{0}s: {1}').format(timestamp, message))
         elif (type==CHART_DATA):
+            payload_message = self.create_JSON_obj(type=type,
+                                                   data=message)
+        elif (type==IA_DATA):
             payload_message = self.create_JSON_obj(type=type,
                                                    data=message)
 

@@ -3,6 +3,10 @@ var TIMER_PERIOD = 1;
 var status = 'IDLE';
 breakintervalID = 0;
 gearintervalID = 0;
+iaDataID = 0;
+
+var TOTAL_CHARTS = 2;
+var showed_charts = 0;
 
 function initialize_index(){
     status = 'IDLE';
@@ -33,7 +37,14 @@ function getNewMessageBreak(){
             }
             else if(type == 'chart_data'){
                 clearInterval(breakintervalID);
+                showed_charts = showed_charts + 1;
                 getReportData(user_case, new_data);
+
+                check_for_ia_data();
+
+            }
+            else if(type == 'ia_data'){
+                $("#ia_class_value").attr('data-value', new_data);
             }
         }
     });
@@ -62,7 +73,10 @@ function getNewMessageGear(){
             }
             else if(type == 'chart_data'){
                 clearInterval(gearintervalID);
+                showed_charts = showed_charts + 1;
                 getReportData(user_case, new_data);
+
+                check_for_ia_data();
             }
         }
     });
@@ -140,4 +154,50 @@ function initialize_chart(chart_name, data, container_id){
     });
 
     container.removeClass('display-none');
+}
+
+function openStarDiv(driver_class){
+    $("#ia_div").show();
+
+//  Desabilita edição.
+    $("#ia_stars")[0].disabled=true;
+//  Seta o valor correto para as estrelas.
+
+    if (driver_class == 1.0){
+        var star = 'star5';
+    }
+    else if (driver_class == 2.0){
+        var star = 'star4';
+    }
+    else if (driver_class == 3.0){
+        var star = 'star3';
+    }
+    else if (driver_class == 4.0){
+        var star = 'star2';
+    }
+    else if (driver_class == 5.0){
+        var star = 'star1';
+    }
+    else{
+        var star = 'star1';
+    }
+    $("#"+star)[0].checked=true;
+}
+
+function check_for_ia_data(ia_class){
+    // Deve buscar pela informação de IA.
+    if (showed_charts == TOTAL_CHARTS){
+
+        var ia_class = $('#ia_class_value').attr('data-value');
+
+        if (ia_class != ''){
+            clearInterval(iaDataID);
+            openStarDiv(parseInt(ia_class));
+        }
+        else{
+            getNewMessageBreak();
+            clearInterval(iaDataID);
+            iaDataID = setInterval(check_for_ia_data, 4*REQUEST_PERIOD);
+        }
+    }
 }
