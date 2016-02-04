@@ -1,7 +1,7 @@
 from requests import *
 
 # IP_ADDRESS = 'http://localhost'
-IP_ADDRESS = '192.168.0.104'
+IP_ADDRESS = 'http://192.168.0.104'
 PORT = ':8000'
 MESSAGE_URL = '/receiver/receive_message_data'
 COMMAND_URL = '/receiver/receive_command'
