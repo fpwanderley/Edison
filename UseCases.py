@@ -95,7 +95,8 @@ class StrongBreakCase(object):
                     new_entry = [break_class, frac_dict[break_class]]
                     ordered_list.append(new_entry)
                 except:
-                    pass
+                    new_entry = [break_class, 0.0]
+                    ordered_list.append(new_entry)
 
             return ordered_list
 
@@ -106,7 +107,15 @@ class StrongBreakCase(object):
         counter = Counter(category_list)
         frac_dict = {key: round(value*100.0/category_list_len, 2) for key, value in counter.items()}
         ordered_dict = _order_class_dict(frac_dict)
+        self.report = ordered_dict
         return ordered_dict
+
+    def get_report_for_IA(self):
+        report_for_IA = []
+        for category in self.report:
+            report_for_IA.append(category[1])
+        return report_for_IA
+
 
 class GearChanging(object):
 
@@ -264,7 +273,8 @@ class CorrectGearChangingCase(object):
                     new_entry = [gear_class, frac_dict[gear_class]]
                     ordered_list.append(new_entry)
                 except:
-                    pass
+                    new_entry = [gear_class, 0.0]
+                    ordered_list.append(new_entry)
 
             return ordered_list
 
@@ -274,7 +284,14 @@ class CorrectGearChangingCase(object):
         counter = Counter(category_list)
         frac_dict = {key: round(value*100.0/category_list_len, 2) for key, value in counter.items()}
         ordered_dict = _order_class_dict(frac_dict)
+        self.report = ordered_dict
         return ordered_dict
+
+    def get_report_for_IA(self):
+        report_for_IA = []
+        for category in self.report:
+            report_for_IA.append(category[1])
+        return report_for_IA
 
 
 # def StrongBreakCase(acceleration_list, period):
